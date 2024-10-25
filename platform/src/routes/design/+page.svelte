@@ -25,11 +25,37 @@
     });
 </script>
 
-<div>
-    <h1>Design Page</h1>
-    <div
-        id="screen"
+<div class="screen">
+    <div class="header">
+        <h1>Design Page</h1>
+    </div>
+    <div class="workspace">
+    <div class="editor">
+    <div class="editor-view"
         bind:this={container}
-        style="width: 100%; height: 100%;"
     ></div>
+    </div>
+    <div class="panel"></div>
+    </div>
 </div>
+
+<style lang="scss">
+    .screen {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .workspace {
+            flex: 1;
+            display: flex;
+            .editor{
+                flex: 1;
+                .editor-view {
+                    width: 100%;
+                    max-height: 100%;
+                    aspect-ratio: 16/9;
+                }
+            }
+            .panel {width: 360px;}
+        }
+    }
+</style>
