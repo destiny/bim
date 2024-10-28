@@ -14,7 +14,8 @@ export const load: PageLoad = async ({fetch, params}) => {
     fragmentIfcLoader.settings.webIfc.COORDINATE_TO_ORIGIN = true;
     console.log('Fragment Manager Ready');
 
-    const res = await fetch('https://thatopen.github.io/engine_components/resources/small.ifc');
+    //const res = await fetch('https://thatopen.github.io/engine_components/resources/small.ifc');
+    const res = await fetch('./Demo_File.ifc');
     const data = await res.arrayBuffer();
     const buffer = new Uint8Array(data);
     console.log('Loaded Data');
